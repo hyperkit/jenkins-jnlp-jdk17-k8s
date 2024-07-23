@@ -48,4 +48,6 @@ RUN curl https://dl.k8s.io/release/v1.28.3/bin/linux/amd64/kubectl -Lo /usr/loca
 
 RUN git config --global --add safe.directory '*'
 
-ENTRYPOINT ["jenkins-agent"]
+USER jenkins
+
+ENTRYPOINT ["/usr/local/bin/jenkins-agent"]
